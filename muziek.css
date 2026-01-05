@@ -1,0 +1,11 @@
+body {
+    color: var(--primary-color);
+    background-color: var(--primary-bg-color);
+}
+
+.bg-setter{
+    height: 700px;
+    background-image: url(plaatjes/persoonlijk/concert.jpg);
+    background-size: cover;
+    background-position: 100% 65%;
+}

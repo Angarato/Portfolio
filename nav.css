@@ -1,0 +1,59 @@
+.navbar-brand img {
+    display: block;
+    float: left;
+    height: 150px;
+    width: 300px;
+    padding: 0px;
+    object-fit: cover;
+}
+
+.navbar-nav .nav-link.active {
+     color: var(--active-color)
+}
+
+.navbar-toggler {
+border-color: white;
+color: white;
+background-color: white;
+}
+
+.nav-link:hover{
+    color: var(--hover-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.navbar {
+    color: var(--nav-color);
+    background-color: var(--primary-bg-color);
+    font-size: 24px;
+    font-weight: 900;
+
+    a:visited {
+    text-decoration: none;
+    color: var(--nav-color)
+    }
+}
+
+.dropdown-menu{
+    background-color: var(--primary-bg-color);   
+}
+
+.dropdown-toggle {
+    color: var(--nav-color);
+
+    a:visited {
+    text-decoration: none;
+    color: var(--nav-color)
+    }
+}
+
+:root{
+     --primary-bg-color: black;
+     --secondary-bg-color: white;
+     --primary-color: rgb(231, 154, 154);
+     --nav-color: white;
+     --secondary-color: black;
+     --active-color: rgb(202, 7, 0);
+     --hover-color: aqua; 
+}

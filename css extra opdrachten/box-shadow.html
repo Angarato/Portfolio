@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Shadow</title>
+    <style>
+        /* Begin - Hoort bij de opdracht */
+
+        :root { /* Toegevoegd omdat het leuk is om te gebruiken. :) */
+            --color: white; 
+            --background-color: red; 
+            --shadow-color: green; 
+        }
+
+        * {
+            box-sizing: border-box; /* Toegevoegd zodat de padding en borders niet bij de width en height worden opgeteld. Belangrijk om te weten als je zonder bootstrap/cms werkt. */
+        }
+
+        body {
+            margin: 0; /* Toegevoegd om de default margin van de body weg te halen. */
+            background-color: black;
+        }
+
+        
+        div { /* Toegevoegd voor de opdracht, deze niet veranderen. */
+            width: 150px; 
+            height: 150px;
+            color: var(--color);
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper { /* Toegevoegd om piramide effect te krijgen. */
+            display: flex;
+            justify-content: space-between;
+            margin: 50px;
+        }
+
+        .wrapper:nth-child(2) {
+            justify-content: space-around; /* Toegevoegd om piramide effect te krijgen. */
+        }
+
+        .wrapper:nth-child(3) { 
+            justify-content: space-evenly; /* Toegevoegd om piramide effect te krijgen. */
+        }
+
+        .wrapper:nth-child(4) {
+            justify-content: center; /* Toegevoegd om piramide effect te krijgen. */
+        }
+        
+        /* Einde - Hoort bij opdracht */
+        .a{
+            box-shadow: -10px 0 5px var(--shadow-color);
+        }
+        .b{
+            box-shadow: 10px 0 5px var(--shadow-color);
+        }
+        .c{
+            box-shadow: 0 10px 5px var(--shadow-color);
+        }
+        .d{
+            box-shadow: 0 -10px 5px var(--shadow-color);
+        }
+        .e{
+            box-shadow: 10px -10px 5px var(--shadow-color);
+        }
+        .f{
+            box-shadow: 10px 10px 5px var(--shadow-color), -10px -10px 5px var(--shadow-color);
+        }
+        .g{
+            box-shadow: 10px 10px 5px var(--shadow-color);
+        }
+        .h{
+            box-shadow: -10px 10px 5px var(--shadow-color);
+        }
+        .i{
+            box-shadow: -10px -10px 5px var(--shadow-color);
+        }
+        .j{
+            width: 250px; 
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px 15px blue inset, 0px 0px 30px 35px var(--shadow-color) inset,  0px 0px 10px 65px orange inset, 0px 0px 30px 85px yellow inset, 0px 0px 30px 25px darkorchid; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="wrapper">
+        <div class="a">
+            Henk A
+        </div>
+
+        <div class="b">
+            Henk B
+        </div>
+
+        <div class="c">
+            Henk C
+        </div>
+
+        <div class="d">
+            Henk D
+        </div>
+    </section>
+
+    <section class="wrapper">
+        <div class="e">
+            Henk E
+        </div>
+
+        <div class="f">
+            Henk F
+        </div>
+
+        <div class="g">
+            Henk G
+        </div>
+    </section>
+
+    <section class="wrapper">
+        <div class="h">
+            Henk H
+        </div>
+        <div class="i">
+            Henk I
+        </div>
+    </section>
+
+    <section class="wrapper">
+        <div class="j">
+            BONUS
+        </div>
+    </section>
+</body>
+
+</html>

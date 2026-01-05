@@ -1,0 +1,320 @@
+.bg-image {
+    background-image: url(plaatjes/header2.jpg);
+    height: 600px;
+    width: 100%;
+    object-position: left bottom;
+    background-size: cover;
+}
+
+.navbar-brand {
+    img {
+        height: 30%;
+        width: 200px;
+    }
+}
+
+.nav {
+    .container {
+        margin: 0;
+    }
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.nav-link {
+    font-size: 32px;
+    /* De font-size voor de nav items */
+    color: rgb(247, 247, 247);
+    font-weight: 700;
+}
+
+.title {
+    margin-top: 175px;
+    color: rgb(126, 81, 209);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    h1 {
+        font-size: 58px;
+    }
+
+}
+
+body {
+    color: black;
+
+    h2 {
+        font-weight: 900;
+    }
+}
+
+.button {
+    border-radius: 25px;
+    width: 200px;
+    padding: 5px;
+    color: white;
+}
+
+.blue-button {
+    background-color: rgb(149, 143, 229);
+}
+
+.red-button {
+    background-color: rgb(228, 38, 38);
+}
+
+.content {
+    padding: 75px 100px;
+}
+
+.square {
+    background-color: blueviolet;
+    margin-top: -50px;
+    width: 300px;
+    height: 300px;
+    color: white;
+    padding: 70px 30px;
+
+    h2 {
+        font-size: 36px;
+    }
+}
+
+.light-square {
+    background-color: rgb(186, 202, 221);
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.dark-square {
+    background-color: rgb(14, 0, 27);
+    width: 50px;
+    height: 50px;
+    margin: 80px 0px;
+}
+
+.albums {
+    margin-top: 50px;
+    margin-left: 300px;
+    margin-bottom: 100px;
+
+}
+
+.image-wrapper {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    padding: 5px 0px;
+}
+
+.image-wrapper:hover{
+    opacity: 0.6;
+}
+
+.bg-image2 {
+    background-image: url(plaatjes/jari-forest.png);
+    height: 600px;
+    width: 100%;
+    background-position: 100% 20%;
+    background-size: cover;
+}
+
+.forest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.forest-text {
+    background-color: rgba(2, 2, 133, 0.5);
+    color: rgb(251, 250, 252);
+    margin-top: 150px;
+    padding: 30px 30px;
+
+    .my-1 {
+        heigth: 5px;
+        color: white;
+        background-color: white;
+    }
+}
+
+.band {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.image-wrapper2 {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    padding: 5px 0px;
+}
+.image-wrapper2:hover{
+    opacity: 0.6;
+}
+
+
+.xtra {
+    background-color: rgba(191, 191, 255, 0.2);
+}
+
+.po {
+    padding: 25px;
+}
+
+.po-button {
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+}
+
+footer {
+    background-color: #080431;
+    color: white;
+
+    h2 {
+        color: rgb(119, 89, 175);
+        padding: 30px 0px;
+    }
+}
+
+.foottext {
+    padding-top: 30px;
+    padding-bottom: 70px;
+
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: #080431;
+    color: white;
+    font-size: 30px;
+    padding: 2px;
+    margin: 10px;
+}
+
+.fa-brands {
+    color: white;
+}
+
+.links {
+
+    li {
+
+        list-style-type: none;
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .title {
+        margin-top: 5px;
+        color: rgb(126, 81, 209);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        h1 {
+            font-size: 32px;
+        }
+    }
+
+    .content {
+        padding: 50px 50px;
+    }
+
+    .square {
+        margin: auto;
+    }
+
+    .light-square {
+        display: none;
+    }
+
+    .dark-square {
+        display: none;
+    }
+
+    .albums {
+        padding: 0 0;
+        margin: 50px 50px;
+    }
+
+    .image-wrapper2 {
+        margin: 0 40px;
+    }
+
+
+}
+
+@media screen and (max-width: 988px) {
+    .title {
+        margin-top: 5px;
+        color: rgb(126, 81, 209);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        h1 {
+            font-size: 32px;
+
+        }
+    }
+
+    .content {
+        padding: 50px 50px;
+    }
+
+    .square {
+        margin: auto;
+    }
+
+    .light-square {
+        display: none;
+    }
+
+    .dark-square {
+        display: none;
+    }
+
+    .albums {
+        padding: 0 0;
+        margin: 50px 50px;
+    }
+
+    .image-wrapper2 {
+        margin: 0 40px;
+    }
+
+}
+
+@media screen and (max-width: 1400px) {
+    .light-square {
+        display: none;
+    }
+
+    .dark-square {
+        display: none;
+    }
+
+}

@@ -1,0 +1,19 @@
+h1 {
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#countLabel{
+    display: block;
+    font-size: 10rem;
+}

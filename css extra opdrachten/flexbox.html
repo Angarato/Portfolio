@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Begin - Hoort bij de opdracht */
+        
+        * {
+            box-sizing: border-box; /* Toegevoegd zodat de padding en borders niet bij de width en height worden opgeteld. Belangrijk om te weten als je zonder bootstrap/cms werkt. */
+        }
+
+        body {
+            margin: 0; /* Toegevoegd om de default margin van de body weg te halen. */
+        }
+
+        div {
+            width: 250px; /* Toegevoegd voor de opdracht, deze niet veranderen. */
+            height: 150px; /* Toegevoegd voor de opdracht, deze niet veranderen. */
+            border: 1px solid red; /* Toegevoegd voor de opdracht, deze niet veranderen. */
+            margin-bottom: 10px; /* Toegevoegd om wat extra ruimte tussen de blokken te krijgen om het iets mooier te maken*/
+        }
+
+        p {
+            margin: 0; /* Toegevoegd om de default margin van de p weg te halen. */
+        }
+
+        .a{
+            display: flex;
+            justify-content: center;
+        }
+
+        .b {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .c {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .d {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .e {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+        }
+
+        /* Einde - Hoort bij opdracht */
+    </style>
+</head>
+<body>
+    <main>
+        
+        <div class="a">
+            <p>Henk</p>
+        </div>
+        
+        <div class="b">
+            <p>Henk</p>
+        </div>
+        
+        <div class="c">
+            <p>Henk</p>
+        </div>
+
+        <!-- Bij class="d" is justify-content niet toegestaan -->
+        <div class="d">
+            <p>Henk</p>
+        </div>
+
+        <!-- Bij class="e" is align-items niet toegestaan -->
+        <div class="e">
+            <p>Henk</p>
+        </div>
+
+    </main>  
+</body>
+</html>

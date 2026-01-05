@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+        body { margin: 0; }
+        .container { display: flex; width: 100%; max-width: 1170px; margin:0 auto; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .t-0 { top: 0; }
+        .l-0 { left: 0; }
+        .r-0 { right: 0; }
+        .b-0 { bottom: 0; }
+        .all-0 { top:0; right: 0; bottom: 0; left: 0; }
+        
+        section {  background: #fff; border: 10px solid #ccc; margin-bottom: 20px; }
+        header section { background:green; color: #fff;}
+        .container {  border: 5px solid #999; padding: 20px 0; }
+        .kolom { box-sizing: border-box; padding: 20px; border: 2px solid #333; width: calc(100% / 3);  }
+        .kolom-f { width: calc(100% / 3 * 2); }
+    </style>
+</head>
+<body>
+    <h1>Mijn pagina</h1>
+    <p>Mijn introductietekst</p>
+    <header style="position: sticky; top: 0; left: 0; right: 0; z-index: 10;">
+        <section>
+            <div class="container">
+                <div class="kolom">
+                    <p>LOGO</p>
+                </div>
+                <div class="kolom kolom-f">
+                    <p>Navigatie items......... De hele header is sticky</p>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="kolom">
+                    <p class="">Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+                <div class="kolom" style="position: relative; top: 20px; left: 20px;">
+                    <p>Dit blokje staat 20px relative top/left van waar hij normaal wilt staan</p>
+                </div>
+                <div class="kolom" style="position: fixed; right: 0; background: #eee;">
+                    <p>Dit blokje is fixed</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container" style="position: relative;">
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+                <div class="kolom" style="position: absolute; top: 0; left:0; right:0; z-index: 3; background: #ccc;">
+                    <p>Ik ben position: absolute; top: 0; left: 0; right: 0; op basis van de container (die position: relative heeft). ook al ben ik de 2e kolom. ik blijf nog wel 33%</p>
+                </div>
+                <div class="kolom">
+                    <p>Dit is een faketekst. Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek. Wat u hier leest is een voorbeeldtekst. Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen. Zelfs als men weet dat het om een faketekst gaat, lezen ze toch door.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+positioning.html
+positioning.html wordt weergegeven.
