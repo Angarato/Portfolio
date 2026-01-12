@@ -1,20 +1,15 @@
 
 
-// let age = 12;
-// let message = age >= 18 ? "you're an adult" : "you're a minor";
+function isValidEmail(email){
+//     if(email.includes("@")){
+//         return true;
+//     }
+// else{
+//     return false;
+//     }
+    return email.includes('@') ? true:false;
+}
 
-// console.log(message)
-
-// let time = 16;
-// let greeding = time < 12 ? "good morning" : "good afternoon!"
-// console.log(greeding)
-
-// let isStudent = true;
-// let message = isStudent ? "you are a student" : "you're not a student!"
-// console.log(message);
-
-let phoneNumber = "06-18646076"
-
-phoneNumber = phoneNumber.padEnd(35, "0")
-
-console.log(phoneNumber)
+console.log(isValidEmail("mvl86@msn.com"));
+console.log(isValidEmail("mvl86msn.com"));
+console.log(isValidEmail("mvl86@hotmail.com"));
