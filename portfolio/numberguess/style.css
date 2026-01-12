@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.form {
+    margin-top: 50px;
+    margin-left: 40%;
+    line-height: 1.4em;
+    font-size: 1.6em;
+}
+
+#mySubmit{
+    font-size: 2em;
+    background-color: green;
+    padding: 5px 25px;
+    text-transform: uppercase;
+}

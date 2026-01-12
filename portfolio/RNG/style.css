@@ -1,0 +1,19 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#myButton{
+    margin-top: 50px;
+    font-size: 3em;
+    padding: 5px 25px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+}
+
+.myLabel{
+    font-size: 3em;
+}
