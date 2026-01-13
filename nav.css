@@ -48,6 +48,10 @@ background-color: white;
     }
 }
 
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: red;
+}
+
 :root{
      --primary-bg-color: black;
      --secondary-bg-color: white;
