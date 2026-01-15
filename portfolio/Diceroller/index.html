@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bro codes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>Dice roller</h1>
+        <div class="radiobuttons"><input type="radio" name="unit" id="d6" value="d6">
+        <label for="d6">D6</label>
+        <input type="radio" name="unit" id="d20" value="d20">
+        <label for="d20">D20</label></div><br>
+        <label for=""># of dice:</label>        
+        <input type="number" value = "1" min="1" id="numOfDice">
+        <button class="Gbutton" onclick="rollDice()">Roll Dice</button>
+        <div id="diceResult"></div>
+        <div id="diceImages"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
