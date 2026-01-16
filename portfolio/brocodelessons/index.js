@@ -1,21 +1,34 @@
-// random password gen
 
 
-function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols){
+// function hello(callback){
+//     console.log("hello!")
+//     callback();
+// }
 
-    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-    const UppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numberChars = "0123456789";
-    const symbolChars = "~!@#$%^&*()_+-=[]{}";
-    return '';
+// function leave(){
+//     console.log("Leave!")
+// }
+
+// function wait(){
+//     console.log("Wait!")
+// }
+
+// function goodBye(){
+//     console.log("good bye!")
+// }
+
+
+function sum(callback, x, y) {
+    let result = x + y;
+    callback(result);
 }
 
+function displayConsole(result) {
+    console.log(result);
+}
 
-const passwordLength = 12;
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNumbers = true;
-const includeSymbols = true;
+function displayPage(result){
+    document.getElementById("myH1").textContent = result;
+}
 
-const password = generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
-console.log(`Generated password: ${password}`)
+sum(displayPage, 1, 7)

@@ -4,25 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>je moeder</title>
     <style>
-        .bg-image{
-            background-image: url(plaatjes/bomen.jpg);
-            background-size: 50%;
-            background-repeat: no-repeat;
-           height: 800px;
+        body {
+            background: black;
+            margin: 0;
         }
 
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        .image-container {
+            margin: 0;
+        }
+
+        .image-container-1 {}
+
+        .image-1 {
+            width: 670px;
+            height: 670px;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+
+        .image-container-2 {
+            width: 670px;
+            height: 670px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-2 {
+            height: 1250px;
+            max-width: unset;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-35%, -39%);
+        }
     </style>
 </head>
 
 <body>
-    <section class="bg-image">    
-        <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex atque praesentium temporibus incidunt? Molestias ipsa error recusandae sint nobis quidem ad dolor inventore, culpa autem repellendus eaque, nemo dolorum! Fugiat animi quaerat quibusdam quo ducimus, officia eveniet temporibus ratione culpa similique voluptatem sit iste. Esse nam consequuntur debitis quas dolorum.
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h2>Afbeelding die gebruik maakt van object-fit</h2>
+                    <figure class="image-container image-container-1">
+                        <img class="image-1" src="plaatjes/persoonlijk/Nashu.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="column">
+                    <h2>Afbeelding die focust op een bepaald gedeelte van de afbeelding</h2>
+                    <figure class="image-container image-container-2">
+                        <img class="image-2" src="plaatjes/persoonlijk/Nashu.jpg" alt="">
+                    </figure>
+                </div>
             </div>
-    </section>
+        </div>
 
+    </section>
 </body>
 
 </html>

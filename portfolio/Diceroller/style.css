@@ -15,9 +15,7 @@ body{
 .radiobuttons {
     display: flex;
     justify-content: center;
-    input{
-        border: 3px;
-    }
+    
 }
 
 label{
