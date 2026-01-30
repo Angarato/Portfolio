@@ -5,10 +5,15 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    height: 600px
 }
 
-h1 {text-align: center; font-size: 4em; margin-top: 50px;}
+#clock-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
 
 #clock{
     font-family: monospace;
@@ -18,14 +23,12 @@ h1 {text-align: center; font-size: 4em; margin-top: 50px;}
 }
 
 .container{
-    margin: 20px 20%;
+    margin-top: 30px;
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    border: 2px solid white;
-    border-radius: 50px;
-    background-color: rgba(187, 0, 204, 0.205);
 }
+
 
 label{
     font-size:  2rem;
@@ -47,32 +50,26 @@ input{
     text-transform: uppercase;
     border-radius: 25px;
     cursor: pointer;
+    box-shadow: 5px 5px 15px darkgreen;
     margin-bottom: 20px;
-    border: 0;
-    transition: background-color 0.5s ease;
 }
 
 .myBtn:hover{
     background-color: rgb(33, 109, 224);
-    box-shadow: 5px 5px 15px darkblue, -5px -5px 15px darkblue;
+    box-shadow: 5px 5px 15px darkblue;
 }
 
-#stopBtn {
+#stop {
     color:white;
     background-color: rgb(126, 10, 10);
+    box-shadow: 5px 5px 15px rgb(126, 10, 10);
 }
-#stopBtn:hover{
-    background-color: rgb(255, 0, 0);
-     box-shadow: 5px 5px 15px rgb(68, 0, 15),-5px -5px 15px rgb(66, 0, 14);
-}
-#resetBtn {
-    background-color: white;
+#stop:hover{
+    background-color: rgb(107, 0, 107);
+     box-shadow: 5px 5px 15px rgb(107, 0, 107);
 }
 
-#resetBtn:hover{
-    background-color: rgba(255, 153, 0, 0.877);
-     box-shadow: 5px 5px 15px rgba(146, 88, 0, 0.534),-5px -5px 15px rgba(146, 88, 0, 0.534);
-}
+
 p{
     font-size: 2em;
     font-weight: bolder;
