@@ -1,3 +1,8 @@
+@font-face {
+  font-family: LobsterTwo; /* set name */
+  src: url(/fonts/LobsterTwo-BoldItalic.ttf); /* url of the font */
+}
+
 .navbar-brand img {
     display: block;
     float: left;
@@ -5,6 +10,18 @@
     width: 300px;
     padding: 0px;
     object-fit: cover;
+}
+
+#Logoname{ 
+    font-size: 3em;
+    font-family: LobsterTwo;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+}
+#Logoname:hover, #Logoname:active, #Logoname:focus{
+  color: red;
+  text-decoration: none;
 }
 
 .navbar-nav .nav-link.active {
@@ -19,7 +36,7 @@ background-color: white;
 
 .nav-link:hover{
     color: var(--hover-color);
-    text-decoration: underline;
+    
     text-underline-offset: 3px;
 }
 
@@ -60,4 +77,5 @@ background-color: white;
      --secondary-color: black;
      --active-color: rgb(202, 7, 0);
      --hover-color: aqua; 
+     text-decoration: none;
 }
