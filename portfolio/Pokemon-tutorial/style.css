@@ -1,0 +1,12 @@
+
+body {
+    background-color: black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    margin-top: 100px;
+   
+}
