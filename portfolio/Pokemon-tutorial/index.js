@@ -5,10 +5,42 @@ canvas.width = 1024;
 canvas.height = 576;
 
 //canvas stuff
-c.fillStyle = "white";
-c.fillRect(0, 0, canvas.width, canvas.height)
+const collisionMap = []
+for (let i = 0; i < collisions.length; i+= 70){
+   collisionMap.push(collisions.slice(i, 70 + i))
+}
 
-//define images
+class Boundary {
+    static width = 48
+    static height = 48
+
+    constructor({position}) {
+        this.position = position
+        this.width = 48
+        this.height = 48
+    }
+
+    draw() {
+        c.fillStyle = 'red'
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    }
+}
+
+const boundaries = []
+const offset = {
+    x: -735,
+    y: -600
+}
+
+collisionMap.forEach((row, i) => {
+    row.forEach((symbol, j) => {
+      if(symbol === 1025)  boundaries.push(new Boundary({position: {
+            x: j * Boundary.width + offset.x,
+            y: i * Boundary.height + offset.y
+        }}))
+    })
+})
+
 const image = new Image();
 const playerImage = new Image();
 
@@ -30,10 +62,12 @@ class Sprite {
     }
 }
 
+
+
 const background = new Sprite({
     position: {
-        x: -735,
-        y: -600
+        x: offset.x,
+        y: offset.y
     },
     image: image
 })
@@ -53,9 +87,13 @@ const keys = {
     },
 }
 
+const moveables = [background, boundaries]
 function animate(){
     window.requestAnimationFrame(animate);
     background.draw()
+    boundaries.forEach(boundary => {
+        boundary.draw()
+    })
     c.drawImage(
         playerImage,
         0,
@@ -68,29 +106,39 @@ function animate(){
         playerImage.height
     )
 
-    if (keys.w.pressed) background.position.y += 4
-    else if (keys.a.pressed) background.position.x += 4
-    else if (keys.s.pressed) background.position.y -= 4
-    else if (keys.d.pressed) background.position.x -= 4
+    if (keys.w.pressed && lastKey === 'w') {
+        moveables.forEach((moveable) => {moveable.position.y += 4})
+    } else if (keys.a.pressed && lastKey === 'a') {
+        moveables.forEach((moveable) => {moveable.position.x += 4})
+    } else if (keys.s.pressed && lastKey === 's') {
+        moveables.forEach((moveable) => {moveable.position.y -= 4})
+    } else if (keys.d.pressed && lastKey === 'd') {
+        moveables.forEach((moveable) => {moveable.position.x -= 4})
+    }
     
 }
 
 animate()
 
+let lastKey = '';
 window.addEventListener('keydown', (e) => {
     
     switch (e.key) {
         case 'w':
             keys.w.pressed = true;
+            lastKey = 'w'
             break
         case 'a':
             keys.a.pressed = true;
+            lastKey = 'a'
             break
         case 's':
-            keys.s.pressed = true; 
+            keys.s.pressed = true;
+            lastKey = 's' 
             break
         case 'd':
             keys.d.pressed = true;
+            lastKey = 'd'
             break
     }
 })
