@@ -1,4 +1,9 @@
 
+@font-face {
+    font-family: FFfont;
+    src: url(data/Reactor7.woff);
+}
+
 body {
     background-color: black;
     box-sizing: border-box;
@@ -6,7 +11,35 @@ body {
     justify-content: center;
 }
 
-canvas {
+.canvasdiv{
+    position: relative;
     margin-top: 100px;
-   
+    display: inline-block;
+}
+
+#gamescreen{
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.combatMenu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 50px;
+    margin-bottom: 5px;
+    height: 100px;
+    background: rgba(64, 64, 150, 0.7);
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-family: FFfont, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
 }

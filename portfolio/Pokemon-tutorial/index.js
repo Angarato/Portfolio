@@ -2,6 +2,7 @@ const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
 
+
 canvas.width = 1024;
 canvas.height = 576;
 
@@ -12,7 +13,7 @@ for (let i = 0; i < collisions.length; i += 70) {
 }
 
 const battleZoneMap = []
-for (let i = 0; i < battleZonesData.length; i += 70){
+for (let i = 0; i < battleZonesData.length; i += 70) {
     battleZoneMap.push(battleZonesData.slice(i, 70 + i))
 }
 
@@ -74,15 +75,16 @@ const player = new Sprite({
     },
     image: playerImage,
     frames: {
-        max: 4
+        max: 4,
+        hold: 10
     },
     sprites: {
-      up: playerUpImage,
-      left: playerLeftImage,
-      right: playerRightImage,
-      down: playerImage
+        up: playerUpImage,
+        left: playerLeftImage,
+        right: playerRightImage,
+        down: playerImage
     }
-    
+
 })
 
 const background = new Sprite({
@@ -128,8 +130,12 @@ function rectangularCollision({ retangle1, retangle2 }) {
     )
 }
 
+const battle = {
+    initiated: false
+}
+
 function animate() {
-    window.requestAnimationFrame(animate);
+    const animationID = window.requestAnimationFrame(animate);
     background.draw()
     boundaries.forEach(boundary => {
         boundary.draw()
@@ -140,33 +146,61 @@ function animate() {
     player.draw()
     foreground.draw()
 
+    let moving = true
+    player.animate = false
+
+    if (battle.initiated) return
     if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
         for (let i = 0; i < battleZones.length; i++) {
             const battleZone = battleZones[i]
-            const overlappingArea =  Math.min(player.position.x + player.width, battleZone.position.x + battleZone.width)  - 
-                                     Math.max(player.position.x, battleZone.position.x)
+            const overlappingArea = (Math.min(player.position.x + player.width, battleZone.position.x + battleZone.width) -
+                Math.max(player.position.x, battleZone.position.x)) *
+                (Math.min(player.position.y + player.height, battleZone.position.y + battleZone.height) -
+                    Math.max(player.position.y, battleZone.position.y))
             if (
-                rectangularCollision({ 
+                rectangularCollision({
                     retangle1: player,
                     retangle2: battleZone
                 }) && overlappingArea > (player.width * player.height) / 2
+                && Math.random() < 0.01
+
             ) {
-                console.log("battleZone collision")
+                console.log("activate battle")
+                window.cancelAnimationFrame(animationID)
+                battle.initiated = true
+                gsap.to('#gamescreen', {
+                    opacity: 1,
+                    repeat: 4,
+                    yoyo: true,
+                    duration: 0.4,
+                    onComplete() {
+                        gsap.to('#gamescreen', {
+                            opacity: 1,
+                            duration: 0.4,
+                            onComplete() {
+                                animateBattle()
+                                gsap.to('#gamescreen', {
+                                    opacity: 0,
+                                    duration: 0.4
+                                })
+                            }
+                        }) 
+                    }
+                })
                 break
             }
         }
     }
 
-    let moving = true
-    player.moving = false
+
     if (keys.w.pressed && lastKey === 'w') {
-        player.moving = true
+        player.animate = true
         player.image = player.sprites.up
 
         for (let i = 0; i < boundaries.length; i++) {
             const boundary = boundaries[i]
             if (
-                rectangularCollision({ 
+                rectangularCollision({
                     retangle1: player,
                     retangle2: {
                         ...boundary, position: {
@@ -185,7 +219,7 @@ function animate() {
         if (moving)
             moveables.forEach((moveable) => { moveable.position.y += 4 })
     } else if (keys.a.pressed && lastKey === 'a') {
-        player.moving = true
+        player.animate = true
         player.image = player.sprites.left
 
         for (let i = 0; i < boundaries.length; i++) {
@@ -210,7 +244,7 @@ function animate() {
         if (moving)
             moveables.forEach((moveable) => { moveable.position.x += 4 })
     } else if (keys.s.pressed && lastKey === 's') {
-        player.moving = true
+        player.animate = true
         player.image = player.sprites.down
 
         for (let i = 0; i < boundaries.length; i++) {
@@ -235,7 +269,7 @@ function animate() {
         if (moving)
             moveables.forEach((moveable) => { moveable.position.y -= 4 })
     } else if (keys.d.pressed && lastKey === 'd') {
-        player.moving = true
+        player.animate = true
         player.image = player.sprites.right
         for (let i = 0; i < boundaries.length; i++) {
             const boundary = boundaries[i]
@@ -261,7 +295,60 @@ function animate() {
 
 }
 
-animate()
+const battleBackgroundImage = new Image()
+battleBackgroundImage.src = 'img/battleBackground.png'
+const battleBackground = new Sprite({
+    position: {
+        x: 0,
+        y: 0
+    },
+    image: battleBackgroundImage
+})
+
+const draggleImage = new Image()
+draggleImage.src = 'img/draggleSprite.png'
+const draggle = new Sprite( {
+     position: {
+        x: 800,
+        y: 100
+    },
+    image: draggleImage,
+    frames: {
+        max: 4,
+        hold: 30
+    },
+    animate: true
+    
+})
+
+
+const battlePlayerImage = new Image()
+battlePlayerImage.src = 'img/embySprite.png'
+const battlePlayer = new Sprite( {
+     position: {
+        x: 280,
+        y: 325
+    },
+    image: battlePlayerImage,
+    frames: {
+        max: 4,
+        hold: 30
+    },
+    animate: true
+    
+})
+
+
+function animateBattle() {
+    window.requestAnimationFrame(animateBattle)
+    battleBackground.draw()
+    draggle.draw()
+    battlePlayer.draw()
+    console.log('animating battle')
+}
+
+//animate()
+animateBattle()
 
 let lastKey = '';
 window.addEventListener('keydown', (e) => {

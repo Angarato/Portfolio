@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Game</title>
 </head>
-<body>
 
-    <canvas></canvas>
+<body>
+    <div class="canvasdiv">
+        <div id="gamescreen"></div>
+        <canvas></canvas>
+        <div class="combatMenu">
+            <div>
+                <strong>Attacks</strong>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+            <div>Health</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="Sprite.js"></script>
     <script src="Boundary.js"></script>
     <script src="data/collisions.js"></script>
     <script src="data/battleZones.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
