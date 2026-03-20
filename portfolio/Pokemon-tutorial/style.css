@@ -6,6 +6,7 @@
 
 body {
     background-color: black;
+    color: white;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -28,18 +29,97 @@ body {
     pointer-events: none;
 }
 
+.healthInfo {
+    text-align: center;
+    margin-top: 10px;
+    background: rgba(64, 64, 150, 0.7);
+    border: 1px solid white;
+    border-radius: 10px; 
+    width: 300px;
+    h2{ margin: 0; padding: 10px}
+}
+
+.healthbar{
+    position: relative;
+    margin-left: 10% ;
+}
+
+.healthbarMax {
+    margin-bottom: 20px;
+    height: 5px;
+    width: 90%;
+    border-radius: 50px;
+    background-color: rgb(233, 233, 233);
+}
+
+.healthbarHealth {
+    position: absolute;
+    top:0;
+    width: 90%;
+    height: 5px;
+    border-radius: 50px;
+    background-color: rgb(115, 204, 120);
+    
+}
+
+.enemyInfo{
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+.playerInfo{
+    position: absolute;
+    bottom: 135px;
+    right: 10px;
+}
+
 .combatMenu {
+    display: flex;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px 50px;
     margin-bottom: 5px;
-    height: 100px;
+    height: 120px;
     background: rgba(64, 64, 150, 0.7);
     border: 1px solid white;
     border-radius: 10px;
     color: white;
     font-family: FFfont, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2rem;
+}
+
+.attacks {
+    margin: 20px 10px;
+    width: 66.6%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+
+.combatInfo {
+    padding-top: 20px;
+    border-left: 1px solid white;
+    border-radius: 0;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background: linear-gradient(180deg, rgb(145, 141, 141), rgb(107, 49, 109));
+    color: white;
+    padding: 10px 20px;
+    width: 20%;
+    height: 80%;
+    border: 1px solid white;
+    border-radius: 30px;
+    transition: 300ms ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(90deg, rgb(145, 141, 141), rgb(107, 49, 109));
 }

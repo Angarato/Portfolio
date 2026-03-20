@@ -11,20 +11,38 @@
 <body>
     <div class="canvasdiv">
         <div id="gamescreen"></div>
+        <div class="healthInfo enemyInfo">
+            <h2>Draggle</h2>
+            <div class="healthbar">
+                <div class="healthbarMax"></div>
+                <div class="healthbarHealth"></div>
+            </div>
+        </div>
+        <div class="healthInfo playerInfo">
+            <h2>Player</h2>
+            <div class="healthbar">
+                <div class="healthbarMax"></div>
+                <div class="healthbarHealth"></div>
+            </div>
+        </div>
         <canvas></canvas>
         <div class="combatMenu">
-            <div>
-                <strong>Attacks</strong>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+            <div class="attacks">
+                <button>Tackle</button>
+                <button>Attack 2</button>
+                <button>Attack 3</button>
+                <button>Attack 4</button>
             </div>
-            <div>Health</div>
+            <div class="combatInfo">
+                <strong>Attack type</strong>
+            </div>
         </div>
     </div>
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+        integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="Sprite.js"></script>
     <script src="Boundary.js"></script>
     <script src="data/collisions.js"></script>

@@ -184,7 +184,7 @@ function animate() {
                                     duration: 0.4
                                 })
                             }
-                        }) 
+                        })
                     }
                 })
                 break
@@ -307,8 +307,8 @@ const battleBackground = new Sprite({
 
 const draggleImage = new Image()
 draggleImage.src = 'img/draggleSprite.png'
-const draggle = new Sprite( {
-     position: {
+const draggle = new Sprite({
+    position: {
         x: 800,
         y: 100
     },
@@ -318,24 +318,24 @@ const draggle = new Sprite( {
         hold: 30
     },
     animate: true
-    
+
 })
 
 
 const battlePlayerImage = new Image()
 battlePlayerImage.src = 'img/embySprite.png'
-const battlePlayer = new Sprite( {
-     position: {
+const battlePlayer = new Sprite({
+    position: {
         x: 280,
         y: 325
     },
     image: battlePlayerImage,
     frames: {
         max: 4,
-        hold: 30
+        hold: 15
     },
     animate: true
-    
+
 })
 
 
@@ -344,11 +344,25 @@ function animateBattle() {
     battleBackground.draw()
     draggle.draw()
     battlePlayer.draw()
-    console.log('animating battle')
+
 }
 
 //animate()
 animateBattle()
+
+document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener('click', () => {
+        battlePlayer.attack({
+            attack: {
+                name: "Tackle",
+                damage: 10,
+                type: "Normal"
+            },
+            recipient: draggle
+        })
+    })
+})
+
 
 let lastKey = '';
 window.addEventListener('keydown', (e) => {

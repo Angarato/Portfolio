@@ -17,12 +17,16 @@ class Sprite {
         }
         this.animate = animate
         this.sprites = sprites 
+        this.opacity = 1
 
     }
 
     draw() {
         //c.drawImage(this.image, this.position.x, this.position.y)
+        c.save()
+        c.globalAlpha = this.opacity
         c.drawImage(
+        
             this.image,
             this.frames.val * this.width,
             0,
@@ -33,6 +37,7 @@ class Sprite {
             this.image.width / this.frames.max,
             this.image.height
         )
+        c.restore
 
         if (!this.animate) return
 
@@ -45,5 +50,34 @@ class Sprite {
         }
 
     }
+
+    attack({attack, recipient}) {
+        const tl = gsap.timeline()
+        tl.to(this.position, {
+            x: this.position.x - 30
+        }).to(this.position, {
+            x: this.position.x + 80,
+            y: this.position.y - 30,
+            duration: 0.1,
+            onComplete() {
+                gsap.to(recipient.position, {
+                    x: recipient.position.x + 20,
+                    yoyo: true,
+                    repeat: 5,
+                    duration: 0.05,
+                })
+
+                gsap.to(recipient, {
+                    opacity: 0,
+                    yoyo: true,
+                    repeat: 5
+                })
+            }
+        }).to(this.position, {
+            x: this.position.x,
+            y: this.position.y 
+        })
+    }
+
 }
 
