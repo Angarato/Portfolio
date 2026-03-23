@@ -317,7 +317,8 @@ const draggle = new Sprite({
         max: 4,
         hold: 30
     },
-    animate: true
+    animate: true,
+    isEnemy: true
 
 })
 
@@ -334,7 +335,8 @@ const battlePlayer = new Sprite({
         max: 4,
         hold: 15
     },
-    animate: true
+    animate: true,
+    isEnemy: false
 
 })
 
@@ -347,15 +349,15 @@ function animateBattle() {
 
 }
 
-//animate()
-animateBattle()
+sanimate()
+//animateBattle()
 
 document.querySelectorAll("button").forEach((button) => {
     button.addEventListener('click', () => {
         battlePlayer.attack({
             attack: {
                 name: "Tackle",
-                damage: 10,
+                damage: 25,
                 type: "Normal"
             },
             recipient: draggle
