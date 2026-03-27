@@ -336,7 +336,7 @@ const battlePlayer = new Sprite({
         hold: 15
     },
     animate: true,
-    isEnemy: false
+    isEnemy: true
 
 })
 
@@ -349,19 +349,24 @@ function animateBattle() {
 
 }
 
-sanimate()
-//animateBattle()
+//animate()
+animateBattle()
 
 document.querySelectorAll("button").forEach((button) => {
-    button.addEventListener('click', () => {
-        battlePlayer.attack({
-            attack: {
-                name: "Tackle",
-                damage: 25,
-                type: "Normal"
-            },
-            recipient: draggle
-        })
+    button.addEventListener('click', (e) => {
+        const selectedSkill = skills[e.currentTarget.innerHTML]
+
+        if (selectedSkill.name === "Tackle" || selectedSkill.name === "FireBall") {
+            battlePlayer.attack({
+                attack: selectedSkill,
+                recipient: battlePlayer,
+                
+                
+            })
+        }
+        else {
+            battlePlayer.heal({heal: selectedSkill})
+        }
     })
 })
 

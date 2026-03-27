@@ -28,9 +28,9 @@ body{
     z-index: 1;
 }
 @keyframes autoRun{
-    0%{transform: perspective(1000px) rotateX(-20deg) rotateY(360deg);}
+    0%{transform: perspective(1000px) rotateX(-20deg) rotateY(0deg);}
     50%{transform: perspective(1500px) rotateX(-20deg) rotateY(180deg);}
-    100%{transform: perspective(1000px) rotateX(-20deg) rotateY(0deg);}
+    100%{transform: perspective(1000px) rotateX(-20deg) rotateY(360deg);}
 }
 
 
