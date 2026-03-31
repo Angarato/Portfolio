@@ -54,7 +54,7 @@ class Sprite {
 
     }
 
-    heal({heal}) {
+    heal({ heal }) {
         const tl = gsap.timeline()
         let movementDistance = 30
 
@@ -63,26 +63,30 @@ class Sprite {
         let healthBar = '#playerHealthBar'
 
         tl.to(this.position, {
-            y: this.position.y - movementDistance
-        }).to(this.position, {
-            y: this.position.y + movementDistance * 2,
-            duration: 0.1,
+            y: this.position.y - movementDistance,
             onComplete: () => {
                 gsap.to(healthBar, {
                     width: this.health + '%',
-                
+
                 })
             }
+            /*}).to(this.position, {
+                y: this.position.y + movementDistance * 2,
+                duration: 0.1,
+                
+                }*/
         }).to(this.position, {
             y: this.position.y
         })
 
-        if(this.health >= 90) this.health = 90
+        if (this.health >= 90) this.health = 90
     }
-    
-    
-   
+
+
+
     attack({ attack, recipient }) {
+        switch (attack.name) {
+            case 'Tackle':
                 const tl = gsap.timeline()
 
                 recipient.health -= attack.damage
@@ -127,7 +131,20 @@ class Sprite {
                     x: this.position.x,
                     y: this.position.y
                 })
-            }
-
+                break;
+                case 'FireBall':
+                    const fireballImage = new Image()
+                    fireballImage.src = 'img/fireball.png'
+                    const fireball = new Sprite({
+                        position: {
+                            x: this.position.x,
+                            y: this.position.y
+                        },
+                        image: fireballImage
+                    })
+                break
         }
+    }
+
+}
 

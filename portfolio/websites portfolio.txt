@@ -1,8 +1,21 @@
-websites i made: 
+/* telefoon */
+.phone-info-top-container {
+  position: absolute;
+  top: 35px;
+  left: 10px;
+}
+.phone-info-top {
+  font-size: 3.5rem;
+  color: $text_alt_color;
+}
+.phone-info-top-number {
+  display: none;
+}
 
-hcmv.nl
-bijzonder-menss.nl
-innerucoaching.com
-touristmedicalcenter.nl
-voordelighypotheken.nl
-v-rental.be
+
+
+
+/* telefoon */
+.phone-info-top-container {
+  display: block !important;
+}

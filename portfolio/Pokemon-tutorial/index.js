@@ -336,21 +336,24 @@ const battlePlayer = new Sprite({
         hold: 15
     },
     animate: true,
-    isEnemy: true
+    isEnemy: false
 
 })
 
-
+const renderedSprites = []
 function animateBattle() {
     window.requestAnimationFrame(animateBattle)
     battleBackground.draw()
     draggle.draw()
     battlePlayer.draw()
 
+    renderedSprites.forEach(sprite => {
+        sprite.draw()
+    })
 }
 
-//animate()
-animateBattle()
+animate()
+//animateBattle()
 
 document.querySelectorAll("button").forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -359,9 +362,8 @@ document.querySelectorAll("button").forEach((button) => {
         if (selectedSkill.name === "Tackle" || selectedSkill.name === "FireBall") {
             battlePlayer.attack({
                 attack: selectedSkill,
-                recipient: battlePlayer,
-                
-                
+                recipient: draggle,
+                renderedSprites
             })
         }
         else {
